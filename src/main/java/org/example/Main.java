@@ -26,10 +26,10 @@ public class Main {
     }
 
     public static void main(String[] args) {
-        Scanner scanner_count = new Scanner(System.in);
+        Scanner scannerCount = new Scanner(System.in);
         System.out.println("\nЗадание Цифры числа");
         System.out.println("Введите число: ");
-        int count = scanner_count.nextInt();
+        int count = scannerCount.nextInt();
         System.out.println("Число состоит из цифр:");
         solution(count);
     }
