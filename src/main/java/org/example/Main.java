@@ -1,52 +1,36 @@
 package org.example;
-
 import java.util.Scanner;
 
 public class Main {
-
-    public static void Summa(String number){
-        int summa = 0;
-        for(int i = 0; i < number.length(); i++) {
-            int j = Character.digit(number.charAt(i), 10);
-            summa += j;
-        }
-        System.out.println("Сумма всех цифр: " + summa);
-    }
-
-    public static void SummaOdd(String number){
-        int summ_n = 0;
-        for(int i = 0; i < number.length(); i++) {
-            int j = Character.digit(number.charAt(i), 10);
-            if (j % 2 != 0) {
-                summ_n += j;
-            }
-        }
-        System.out.println("Сумма всех нечетных цифр: " + summ_n);
-    }
-
-    public static void Max(String number){
+    public static void solution(int number){
+        int step = 0;
         int max = 0;
-        int tmp;
-        for(int i = 0; i < number.length(); i++) {
-            int j = Character.digit(number.charAt(i), 10);
-            tmp = j;
-            if(tmp > max){
-                max = tmp;
+        int summ = 0;
+        int summOdd = 0;
+
+        while(number > 0){
+            step = number % 10;
+            summ += step;
+            System.out.println(step);
+            number /= 10;
+            if(max < step){
+                max = step;
+            }
+            if((step % 2) != 0){
+                summOdd += step;
             }
         }
+        System.out.println("Сумма всех цифр: " + summ);
+        System.out.println("Сумма всех нечетных цифр: " + summOdd);
         System.out.println("Максимальная цифра в числе: " + max);
     }
 
     public static void main(String[] args) {
-        int count;
         Scanner scanner_count = new Scanner(System.in);
-
         System.out.println("\nЗадание Цифры числа");
         System.out.println("Введите число: ");
-        count = scanner_count.nextInt();
-        String digit = String.valueOf(count);
-        Summa(digit);
-        SummaOdd(digit);
-        Max(digit);
+        int count = scanner_count.nextInt();
+        System.out.println("Число состоит из цифр:");
+        solution(count);
     }
 }
