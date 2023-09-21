@@ -8,6 +8,10 @@ public class Main {
         int summ = 0;
         int summOdd = 0;
 
+        if(number < 0){
+            number = number * (-1);
+        }
+
         while(number > 0){
             step = number % 10;
             summ += step;
